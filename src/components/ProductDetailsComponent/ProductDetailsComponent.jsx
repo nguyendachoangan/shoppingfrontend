@@ -49,7 +49,7 @@ const ProductDetailsComponent = ({idProduct}) => {
     useEffect(() => {
         const orderRedux = order?.orderItems?.find((item) => item.product === productDetails?._id) 
         
-        if((orderRedux?.amount + numProduct) <= orderRedux?.countInstock || (!orderRedux && productDetails?.countInStock > 0)) {
+        if((orderRedux?.amount + numProduct) <= orderRedux?.countInStock || (!orderRedux && productDetails?.countInStock > 0)) {
             setErrorLimitOrder(false)
         } else if(productDetails?.countInStock === 0){
             setErrorLimitOrder(true)
