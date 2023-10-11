@@ -143,7 +143,7 @@ const PaymentPage = () => {
   useEffect(() => {
     if (isSuccess && dataAdd?.status === 'OK') {
       const arrayOrdered = []
-      order?.orderItemsSelected?.forEach(element => {
+      order?.orderItemsSlected?.forEach(element => {
         arrayOrdered.push(element.product)
       });
       dispatch(removeAllOrderProduct({listChecked: arrayOrdered}))
@@ -152,7 +152,7 @@ const PaymentPage = () => {
         state: {
           delivery,
           payment,
-          order: order?.orderItemsSelected,
+          orders: order?.orderItemsSlected,
           totalPriceMemo: totalPriceMemo
         }
       })
@@ -304,7 +304,7 @@ const PaymentPage = () => {
                     // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
                     onSuccess={onSuccessPaypal}
                     onError={() => {
-                      alert('Erro')
+                      alert('Erroe')
                     }}
                   />
                 </div>
